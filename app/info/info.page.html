@@ -1,0 +1,30 @@
+<ion-header>
+
+    <div class="container">
+        <img src={{image}}>
+        <div class="top-right">{{name}}</div>
+        <ion-icon name="arrow-back" class="top-left" routerLink="/list"></ion-icon>
+    </div>
+</ion-header>
+
+<ion-content>
+    <div>
+        <div>
+            <p>Description is listed here:<br>{{description}}
+            </p>
+        </div>
+        <ion-button class="block">
+            <ion-icon class="icon" name="call"></ion-icon>
+            {{phone}}
+        </ion-button>
+        <ion-button class="block">
+            <ion-icon class="icon" name="navigate"></ion-icon>
+            {{address}}
+        </ion-button>
+        <ion-button class="block">
+            <ion-icon class="icon" name="logo-chrome"></ion-icon>
+            <a href={{url}}>Frontpage</a>
+        </ion-button>
+
+    </div>
+</ion-content>
