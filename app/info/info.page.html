@@ -1,7 +1,7 @@
 <ion-header>
 
     <div class="container">
-        <img src={{image}}>
+        <img id="header">
         <div class="top-right">{{name}}</div>
         <ion-icon name="arrow-back" class="top-left" routerLink="/list"></ion-icon>
     </div>
@@ -13,6 +13,9 @@
             <p>Description is listed here:<br>{{description}}
             </p>
         </div>
+        <div>
+            <img src="" id="picture">
+        </div>
         <ion-button class="block">
             <ion-icon class="icon" name="call"></ion-icon>
             {{phone}}
@@ -23,7 +26,7 @@
         </ion-button>
         <ion-button class="block">
             <ion-icon class="icon" name="logo-chrome"></ion-icon>
-            <a href={{url}}>Frontpage</a>
+            <a href="" id="frontpage">Frontpage</a>
         </ion-button>
 
     </div>

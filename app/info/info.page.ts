@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';        // httpclient for sending http request
 import { NavController } from '@ionic/angular';
+import { nodeChildrenAsMap } from '@angular/router/src/utils/tree';
 
 
 @Component({
@@ -15,19 +16,23 @@ export class InfoPage implements OnInit {
   description: string;
   phone: string;
   address: string;
-  url: string;
-  image: string;
+  webpage: string;
+  picture: string;
+
   ngOnInit(): void {
-    const getUrl = 'http://4d564e6e.ngrok.io/api/beacon/5d034e8b9d27c69f446f9775';      // change the request URL you want here.
+    const getUrl = 'http://227e8cfe.ngrok.io/api/data/F438F17F64D9';      // change the request URL you want here.
     this.http.get(getUrl).subscribe((response) => {          // get request syntax. use post, put, delete, etc. for other requests
     console.log(response);
     this.dataA = response;
-    this.name = JSON.stringify(this.dataA.name);
-    this.description = JSON.stringify(this.dataA.description);
-    this.phone = JSON.stringify(this.dataA.phone);
-    this.address = JSON.stringify(this.dataA.address);
-    this.url = JSON.stringify(this.dataA.webpage);
-    this.image = JSON.stringify(this.dataA.image);
+    this.name = this.dataA.name;                              // retrieve the data from the server
+    this.description = this.dataA.description;
+    this.address = this.dataA.address;
+    this.phone = this.dataA.phone;
+    this.webpage = this.dataA.webpage;
+    this.picture = this.dataA.picture;
+
+    document.getElementById('frontpage').setAttribute('href', this.webpage);      // change atribute of the html tag
+    document.getElementById('picture').setAttribute('src', this.picture);
   }
 );
 }
